@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component,Fragment } from 'react';
 import * as FontAwesome from 'react-icons/lib/fa';
 import { connect } from "react-redux";
 
 import "./QuotesList.scss";
-import { DeleteQuotes } from "../../Actions/QuoteActions";
+import { DeleteQuotes } from "../../actions/QuoteActions";
 
 class QuotesList extends Component {
   constructor(props){
@@ -26,9 +26,8 @@ class QuotesList extends Component {
   };
   
   render() {
-    console.log(this.props.quotes);
     return (
-      <React.Fragment>
+      <Fragment>
         <div className="quotes-list">
           <h1>List of Quotes:</h1>
           {this.props.quotes.map((item,index)=>{
@@ -46,14 +45,11 @@ class QuotesList extends Component {
             )
           })}
         </div>
-      </React.Fragment>
+      </Fragment>
     )
   }
 }
 
-const getQuotes = (state) => {
-  console.log(state.Quotes.Quotes);
-  return  state;
-}
+const getQuotes = (state) => state;
 
 export default connect(getQuotes,{DeleteQuotes})(QuotesList);

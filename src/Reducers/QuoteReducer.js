@@ -1,8 +1,8 @@
-import { ADD_QUOTES, DELETE_QUOTES } from "../Constants/Constants";
+import { ADD_QUOTES, DELETE_QUOTES } from "../constants/Constants";
 
 const initialState = {
     Quotes: []
-    // [{author:"Jogi",quote:"A footer typically contains the author of the document, copyright information, links to terms of use, contact information, etc."},{author:"Chinna",quote:"A footer typically contains the author of the document, copyright information, links to terms of use, contact information, etc."}]
+   
 };
 
 export default function(state=initialState,action){

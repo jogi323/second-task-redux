@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component ,Fragment} from 'react';
 import { connect } from "react-redux";
-
+import { AddQuotes } from "../../actions/QuoteActions";
 import "./QuotesForm.scss";
-import { AddQuotes } from "../../Actions/QuoteActions";
 
 class QuotesForm extends Component {
   constructor(props){
@@ -30,7 +29,6 @@ class QuotesForm extends Component {
     };
     this.state.list.push(data);
     this.props.AddQuotes(data);
-    // this.props.addQuote(this.state.list);
     this.setState({
       author: "",
       quote: ""
@@ -39,9 +37,10 @@ class QuotesForm extends Component {
 
   render() {
     return (
+      <Fragment>
       <section className="section">
         <form>
-          <h1>Please enter your quote here!!!</h1>
+          <h1>Please enter your quote</h1>
           <div className="input-field">
             <label htmlFor="Author">Author: </label>
             <input type="text" name="author" placeholder="Author......." value={this.state.author} onChange={this.handleChange} required/>
@@ -55,6 +54,7 @@ class QuotesForm extends Component {
           </div>
         </form>
       </section>
+      </Fragment>
     )
   }
 }

@@ -1,4 +1,4 @@
-import { ADD_QUOTES, DELETE_QUOTES } from "../Constants/Constants";
+import { ADD_QUOTES, DELETE_QUOTES } from "../constants/Constants";
 
 export const AddQuotes = (data) => (dispatch) => {
     dispatch({
