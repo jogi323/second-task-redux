@@ -10,7 +10,7 @@ class QuotesList extends Component {
     super(props);
     this.state = {
       list: this.props.quotes
-    }
+    };
   };
 
   liked = (index) => {
@@ -22,7 +22,8 @@ class QuotesList extends Component {
   };
 
   deleteQuote = (ind) => {
-    this.props.DeleteQuotes(ind);
+    this.state.list.splice(ind,1);
+    this.forceUpdate();
   };
   
   render() {
@@ -49,7 +50,7 @@ class QuotesList extends Component {
     )
   }
 }
-
 const getQuotes = (state) => state;
+
 
 export default connect(getQuotes,{DeleteQuotes})(QuotesList);
