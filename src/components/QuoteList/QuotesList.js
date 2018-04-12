@@ -10,7 +10,7 @@ class QuotesList extends Component {
     super(props);
     this.state = {
       list: this.props.quotes
-    }
+    };
   };
 
   liked = (index) => {
@@ -22,11 +22,11 @@ class QuotesList extends Component {
   };
 
   deleteQuote = (ind) => {
-    this.props.DeleteQuotes(ind);
+    this.state.list.splice(ind,1);
+    this.forceUpdate();
   };
   
   render() {
-    console.log(this.props.quotes);
     return (
       <React.Fragment>
         <div className="quotes-list">
@@ -52,7 +52,6 @@ class QuotesList extends Component {
 }
 
 const getQuotes = (state) => {
-  console.log(state.Quotes.Quotes);
   return  state;
 }
 
