@@ -6,7 +6,7 @@ module.exports = {
   output: {
     filename: "bundle.js"
   },
-  devtool: "source-map",
+  devtool: "eval-cheap-module-source-map",
   module: {
     rules: [
       {

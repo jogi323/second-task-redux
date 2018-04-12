@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component,Fragment} from 'react';
 
 import QuotesForm from "./components/QuoteForm/QuotesForm";
 import QuotesList from "./components/QuoteList/QuotesList";
