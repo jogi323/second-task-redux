@@ -6,18 +6,23 @@
         padding: 1%;
         article {
             background: #ccc;
-        }
-        footer {
-            float: right;
-            position: relative;
-            text-align: right;
-            right: 5%;
-        }
-        .icons {
-            padding: 1%;
-            .like,.delete {
-                padding: 2%;
-                cursor: pointer;
+            blockquote {
+                padding-top: 4%;
+                margin-left: 5%;
+            }
+            footer {
+                float: right;
+                position: relative;
+                text-align: right;
+                right: 5%;
+            }
+            .icons {
+                padding: 1%;
+                margin-left: 4%;
+                .like,.delete {
+                    padding: 2%;
+                    cursor: pointer;
+                }
             }
         }
     }
