@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component,Fragment} from 'react';
 
 import QuotesForm from "./components/QuoteForm/QuotesForm";
 import QuotesList from "./components/QuoteList/QuotesList";
@@ -8,7 +8,6 @@ class App extends Component {
         super(props);
         this.state = {
             quotes:[]
-            // [{author:"Jogi",quote:"A footer typically contains the author of the document, copyright information, links to terms of use, contact information, etc.",liked:false,count:0},{author:"Chinna",quote:"A footer typically contains the author of the document, copyright information, links to terms of use, contact information, etc.",liked:false,count:0}]
         };
     }
     addQuote = (data) => {
@@ -23,11 +22,11 @@ class App extends Component {
     };
 
     render() { 
-        return (  
-            <div>
+        return (
+            <Fragment>  
                 <QuotesForm addQuote={this.addQuote} initialQuotes={this.state.quotes}/>
                 <QuotesList quotes={this.state.quotes} deleteQuote = {this.removeQuote}/>
-            </div>
+            </Fragment>
         )
     }
 }
