@@ -30,7 +30,7 @@ class QuotesList extends Component {
             return (
               <section key={item.author}>
                 <article>
-                  <blockquote>{item.quote}</blockquote>
+                  <blockquote>"{item.quote}"</blockquote>
                   <footer>- {item.author}</footer>
                   <div className="icons">
                   <span className="like" onClick={()=>this.liked(index)}>{item.liked?<FontAwesome.FaHeart/>:<FontAwesome.FaHeartO/>}{item.count>0?item.count:null}</span>
