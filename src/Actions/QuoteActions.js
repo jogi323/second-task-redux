@@ -1,4 +1,4 @@
-import { ADD_QUOTES, DELETE_QUOTES } from "../Constants/Constants";
+import { ADD_QUOTES, DELETE_QUOTES, LIKE_QUOTES } from "../Constants/Constants";
 
 export const AddQuotes = (data) => (dispatch) => {
     dispatch({
@@ -16,7 +16,7 @@ export const DeleteQuotes = (data) => (dispatch) => {
 
 export const LikeQuotes = (data) => (dispatch) => {
     dispatch({
-        type: ADD_QUOTES,
+        type: LIKE_QUOTES,
         data: data
     });
 };

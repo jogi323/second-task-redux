@@ -28,9 +28,7 @@ class QuotesForm extends Component {
       liked: false,
       count: 0
     };
-    this.state.list.push(data);
     this.props.AddQuotes(data);
-    // this.props.addQuote(this.state.list);
     this.setState({
       author: "",
       quote: ""

@@ -1,8 +1,7 @@
-import { ADD_QUOTES, DELETE_QUOTES } from "../Constants/Constants";
+import { ADD_QUOTES, DELETE_QUOTES, LIKE_QUOTES } from "../Constants/Constants";
 
 const initialState = {
     Quotes: []
-    // [{author:"Jogi",quote:"A footer typically contains the author of the document, copyright information, links to terms of use, contact information, etc."},{author:"Chinna",quote:"A footer typically contains the author of the document, copyright information, links to terms of use, contact information, etc."}]
 };
 
 export default function(state=initialState,action){
@@ -13,6 +12,12 @@ export default function(state=initialState,action){
             return newState;
         case DELETE_QUOTES:
             newState.Quotes.splice(action.data,1);
+            return newState;
+            case LIKE_QUOTES:
+            newState.Quotes[action.data].liked = !newState.Quotes[action.data].liked;
+            if(newState.Quotes[action.data].liked === true) {
+                newState.Quotes[action.data].count++;
+            };
             return newState;
         default:
         return state;

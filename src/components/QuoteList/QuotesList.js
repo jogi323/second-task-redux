@@ -3,7 +3,7 @@ import * as FontAwesome from 'react-icons/lib/fa';
 import { connect } from "react-redux";
 
 import "./QuotesList.scss";
-import { DeleteQuotes } from "../../Actions/QuoteActions";
+import { DeleteQuotes, LikeQuotes } from "../../Actions/QuoteActions";
 
 class QuotesList extends Component {
   constructor(props){
@@ -14,16 +14,11 @@ class QuotesList extends Component {
   };
 
   liked = (index) => {
-    this.state.list[index].liked = !this.state.list[index].liked;
-    if(this.state.list[index].liked === true) {
-      this.state.list[index].count++;
-    }
-    this.forceUpdate();
+    this.props.LikeQuotes(index);
   };
 
   deleteQuote = (ind) => {
-    this.state.list.splice(ind,1);
-    this.forceUpdate();
+    this.props.DeleteQuotes(ind);
   };
   
   render() {
@@ -31,7 +26,7 @@ class QuotesList extends Component {
       <React.Fragment>
         <div className="quotes-list">
           <h1>List of Quotes:</h1>
-          {this.props.quotes.map((item,index)=>{
+          {this.props.Quotes.Quotes.map((item,index)=>{
             return (
               <section key={item.author}>
                 <article>
@@ -55,4 +50,4 @@ const getQuotes = (state) => {
   return  state;
 }
 
-export default connect(getQuotes,{DeleteQuotes})(QuotesList);
+export default connect(getQuotes,{DeleteQuotes,LikeQuotes})(QuotesList);
