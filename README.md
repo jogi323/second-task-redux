@@ -1,7 +1,7 @@
 # second-react-task
 This is a simple application for adding quotes.
 
-For demo visit: http://favourite-quotations.surge.sh/
+For demo visit:  http://addquotes-redux.surge.sh
 
 Steps for running application:
 
